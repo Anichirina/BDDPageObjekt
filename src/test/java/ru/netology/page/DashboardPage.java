@@ -4,6 +4,7 @@ import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import lombok.val;
 
+import static com.codeborne.selenide.CollectionCondition.texts;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
@@ -22,11 +23,10 @@ public class DashboardPage {
         return extractBalance(text);
     }
 
-    public int getCardBalance(String id) {
+    public int getCardBalance(int id) {
         // TODO: перебрать все карты и найти по атрибуту data-test-id
-        val text = $$("[data-test-id]").texts();
-        ElementsCollection
-        return extractBalance(text);
+        val text = $$("[data-test-id]").filter(visible).shouldHave(texts(", баланс: "));
+        return extractBalance(String.valueOf(text));
     }
 
     private int extractBalance(String text) {
