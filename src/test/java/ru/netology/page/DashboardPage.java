@@ -22,8 +22,12 @@ public class DashboardPage {
         val text = cards.first().text();
         return extractBalance(text);
     }
+    public int getLastCardBalance() {
+        val text = cards.last().text();
+        return extractBalance(text);
+    }
 
-    public int getCardBalance(int id) {
+    public int getCardBalance() {
         // TODO: перебрать все карты и найти по атрибуту data-test-id
         val text = $$("[data-test-id]").filter(visible).shouldHave(texts(", баланс: "));
         return extractBalance(String.valueOf(text));

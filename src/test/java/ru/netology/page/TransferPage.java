@@ -1,14 +1,23 @@
 package ru.netology.page;
 
 import com.codeborne.selenide.SelenideElement;
+import jdk.jfr.Name;
+import ru.netology.data.DataHelper;
 
 import static com.codeborne.selenide.Selenide.$;
 
 public class TransferPage {
-    private SelenideElement actionDeposit = $("[data-test-id = action-deposit]");
-    private SelenideElement actionReloadButton = $("[data-test-id = action-reload]");
     DashboardPage numberCard = new DashboardPage();
 
+    @Name("Страница перевода")
+    public class TransferPageCardFirst {
+    private SelenideElement actionDeposit = $("[data-test-id = action-deposit]");
+    private SelenideElement actionReloadButton = $("[data-test-id = action-reload]");
+
+}
+    public void TransferPageFirst(TransferPage.TransferPageCardFirst translastion){
+        TransferPageCardFirst.act.setValue();
+    }
     public class AddingMoneyToCard {
         private SelenideElement amountCard = $("[data-test-id=amount]");
         private SelenideElement fromCard = $("[data-test-id=from]");
