@@ -1,8 +1,8 @@
 package test;
 
-import ru.netology.data.DataHelper;
 import lombok.val;
 import org.junit.jupiter.api.Test;
+import ru.netology.data.DataHelper;
 import ru.netology.page.LoginPageV1;
 import ru.netology.page.LoginPageV2;
 import ru.netology.page.LoginPageV3;
@@ -48,6 +48,7 @@ public class MoneyTransferTest {
         val authInfo = DataHelper.getAuthInfo();
         val verificationPage = loginPage.validLogin(authInfo);
         val verificationCode = DataHelper.getVerificationCodeFor(authInfo);
+
 
         verificationPage.validVerify(verificationCode);
     }

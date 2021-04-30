@@ -36,7 +36,6 @@ public class TransferPage {
         private SelenideElement amountCard = $("[data-test-id=amount]");
         private SelenideElement fromCard = $("[data-test-id=from]");
         private SelenideElement buttonActionTransfer = $("[data-test-id=action-transfer]");
-
     }
 
     public void AddMoneyCard(int id, int amountToTransfer) {
