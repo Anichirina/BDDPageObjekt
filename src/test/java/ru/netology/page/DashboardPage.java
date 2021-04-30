@@ -18,6 +18,17 @@ public class DashboardPage {
     public DashboardPage() {
         heading.shouldBe(visible);
     }
+    public static TransferPage clickToReplenishFirstCard() {
+        DashboardPage dashboardPage = new DashboardPage();
+        dashboardPage.cards.get(1).click();
+        return new TransferPage();
+    }
+
+    public static TransferPage clickToReplenishSecondCard() {
+        DashboardPage dashboardPage = new DashboardPage();
+        dashboardPage.cards.get(2).click();
+        return new TransferPage();
+    }
     public int getFirstCardBalance() {
         val text = cards.first().text();
         return extractBalance(text);
